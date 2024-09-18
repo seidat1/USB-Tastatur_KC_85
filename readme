@@ -10,12 +10,12 @@ Der USB-Anschluss wird mit einem USB-Host Shield realisiert.
 
 Die Tastatursignale werden per USB an den USB-Host-Adapter gesendet und von dort per SPI an den Mikroprozessor weitergeleitet. Dieser erzeugt dann das Signal der KC-Tastatur und gibt dieses an den Tastaturstecker ab.
 Die Tastencodes und Zeichenketten sind in einer Tastaturtabelle hinterlegt. Diese hat folgenden Aufbau:
-    # große Buchstaben
-    [CharTable]							# char 'A'
-		KeyCnt	= 0x02
-		CntMask	= 0xFF
-		KeyCode	= 0x04
-		Strg	= "A"
-  .
-  .
-  .
+	# große Buchstaben
+	[CharTable]		# char 'A'
+	KeyCnt	= 0x02
+	CntMask	= 0xFF
+	KeyCode	= 0x04
+	Strg	= "A"
+	.
+	.
+	.
