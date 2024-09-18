@@ -1,4 +1,4 @@
-USB to KC 85
+n USB to KC 85
 
 Dies ist ein Adapter um eine USB-Tastatur an einen KC 85/2..5 anzuschließen.
 Es ist mit diesem Adapter auch möglich ein Bluethoos-Tastatur zu betreiben.
@@ -8,4 +8,14 @@ Dies ergibt eine Flexibilität, wie sie bei der bisherigen Tastatur nicht mögli
 Grundlage dieses Adapters ist ein WEMOS D1 mini, der einen ESP8266 Mikroprozessor beinhaltet.
 Der USB-Anschluss wird mit einem USB-Host Shield realisiert. 
 
-Die Tastatursignale werden per USB an 
+Die Tastatursignale werden per USB an den USB-Host-Adapter gesendet und von dort per SPI an den Mikroprozessor weitergeleitet. Dieser erzeugt dann das Signal der KC-Tastatur und gibt dieses an den Tastaturstecker ab.
+Die Tastencodes und Zeichenketten sind in einer Tastaturtabelle hinterlegt. Diese hat folgenden Aufbau:
+    # große Buchstaben
+    [CharTable]							# char 'A'
+		KeyCnt	= 0x02
+		CntMask	= 0xFF
+		KeyCode	= 0x04
+		Strg	= "A"
+  .
+  .
+  .
